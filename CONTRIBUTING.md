@@ -1,45 +1,36 @@
-# Contributing to Open Projects Hub
+# Contributing to template-docs
 
-Thank you for your interest in contributing to the **Open Projects Hub**! 🎉
-
-This is an open-source project, and we welcome contributions from developers, students, and freelancers of all experience levels. Whether it's a bug fix, a new feature, improved documentation, or an architectural suggestion — every contribution matters.
+Thank you for contributing to this documentation template. This repository is a Docusaurus-based starter for project documentation sites, and improvements to the structure, examples, documentation, and workflow are welcome.
 
 ---
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
 - [Project Context](#project-context)
 - [How to Contribute](#how-to-contribute)
 - [Development Workflow](#development-workflow)
 - [Project Structure](#project-structure)
 - [Coding Standards](#coding-standards)
-- [Testing Guidelines](#testing-guidelines)
+- [Testing and Verification](#testing-and-verification)
 - [Pull Request Process](#pull-request-process)
 - [Reporting Issues](#reporting-issues)
 - [Questions & Discussions](#questions--discussions)
 
 ---
 
-## Code of Conduct
-
-By participating in this project, you agree to maintain a respectful and inclusive environment for everyone. Be kind, constructive, and professional in all interactions.
-
----
-
 ## Project Context
 
-The Open Projects Hub is a full-stack web application built to help freelancers manage clients, structure project requirements, and use AI to refine ambiguous ideas into actionable technical specifications.
+This repository is a reusable documentation template built with Docusaurus and TypeScript. It is meant to help teams create polished project docs with a ready-made folder structure, sample requirements and architecture sections, and GitHub Pages deployment support.
 
 **Key characteristics:**
 
-- **Backend**: Python 3.12, FastAPI, Modular Monolith with Clean Architecture and DDD
-- **Frontend**: React 18, TypeScript 5, Ant Design, Redux Toolkit
-- **Database**: PostgreSQL (via Supabase) with Row Level Security
-- **Deployment**: Vercel (frontend) + Render (backend)
-- **Testing**: Pytest (backend), Vitest + React Testing Library (frontend), Playwright (E2E)
+- **Framework**: Docusaurus
+- **Language**: TypeScript
+- **Build Tooling**: Node.js + npm
+- **Deployment**: GitHub Pages via GitHub Actions
+- **Documentation Structure**: Context, requirements, planning, architecture, decisions, prototype, and examples
 
-For the full picture, start with the [Project Overview](./docs/00-context/overview.md) and the [Architecture README](./docs/03-architecture/README.md).
+For the repository-specific setup and site structure, start with the [README](./README.md).
 
 ---
 
@@ -47,23 +38,21 @@ For the full picture, start with the [Project Overview](./docs/00-context/overvi
 
 ### Ways to Contribute
 
-- 🐛 **Report bugs** — Found a bug? Open an issue with clear reproduction steps.
-- ✨ **Suggest features** — Have an idea? We'd love to hear it.
-- 📝 **Improve documentation** — Docs are never perfect. Help us make them clearer.
-- 🧪 **Write tests** — Help us maintain our 70% minimum coverage target.
-- 🔧 **Fix bugs** — Pick an issue labeled `good first issue` or `help wanted`.
-- 🏗️ **Implement features** — Check the [Epics Index](./docs/06-work-items/README.md) for planned work.
+- 🐛 **Report bugs** — Found a broken template behavior or a documentation issue?
+- ✨ **Suggest improvements** — Share ideas for better onboarding, structure, or examples.
+- 📝 **Improve documentation** — Clarify setup steps, usage guidance, and project conventions.
+- 🔧 **Fix template issues** — Update config, styles, docs, or workflow automation.
+- 🧪 **Improve validation** — Add or refine checks so the template remains reliable.
 
-### Good First Issues
+### Good First Contributions
 
-Look for issues labeled:
+Good starting points include:
 
-| Label             | Meaning                                                       |
-| ----------------- | ------------------------------------------------------------- |
-| `good first issue` | Small, self-contained tasks ideal for newcomers               |
-| `help wanted`      | Tasks we'd especially welcome community help on              |
-| `documentation`    | Documentation improvements                                    |
-| `bug`              | Confirmed bugs that need fixing                               |
+- Documentation clarity fixes
+- README improvements
+- Example cleanup or better scaffolding
+- Small configuration corrections
+- Template workflow and deployment fixes
 
 ---
 
@@ -73,34 +62,34 @@ Look for issues labeled:
 
 ```bash
 # Fork the repository on GitHub, then:
-git clone https://github.com/<your-username>/open-projects-hub-docs.git
-cd open-projects-hub-docs
-git remote add upstream https://github.com/<original-owner>/open-projects-hub-docs.git
+git clone https://github.com/<your-username>/template-docs.git
+cd template-docs
+git remote add upstream https://github.com/<original-owner>/template-docs.git
 ```
 
 ### 2. Create a Branch
 
-Always create a new branch for your work. Do not work directly on `main`.
+Always work from a feature branch instead of `main`.
 
 ```bash
-git checkout -b feature/your-feature-name
+git checkout -b docs/my-improvement
 ```
 
 **Branch naming conventions:**
 
-| Type         | Prefix         | Example                        |
-| ------------ | -------------- | ------------------------------ |
-| Feature      | `feature/`    | `feature/ai-refinement-ui`     |
-| Bug fix      | `fix/`        | `fix/login-redirect-loop`       |
-| Documentation| `docs/`       | `docs/update-readme`           |
-| Refactor     | `refactor/`   | `refactor/auth-service`         |
-| Test         | `test/`       | `test/auth-endpoints`           |
+| Type | Prefix | Example |
+| ---- | ------ | ------- |
+| Feature | `feature/` | `feature/docs-navigation` |
+| Bug fix | `fix/` | `fix/github-pages-link` |
+| Documentation | `docs/` | `docs/update-readme` |
+| Refactor | `refactor/` | `refactor/sidebar-config` |
+| Chore | `chore/` | `chore/deps-update` |
 
 ### 3. Make Your Changes
 
-- Keep changes focused — one concern per pull request.
-- Follow existing code patterns and conventions.
-- Write or update tests for any logic you change.
+- Keep changes focused and related to a single concern.
+- Match the existing repository style and structure.
+- Update documentation when the change affects setup or usage.
 
 ### 4. Commit Your Changes
 
@@ -108,46 +97,56 @@ Write clear, meaningful commit messages.
 
 ```bash
 git add .
-git commit -m "feat: add AI refinement draft preview component"
+git commit -m "docs: improve setup instructions"
 ```
 
 **Commit message format** (Conventional Commits):
 
-| Type       | Usage                                  |
-| ---------- | -------------------------------------- |
-| `feat`     | A new feature                         |
-| `fix`      | A bug fix                             |
-| `docs`     | Documentation only changes            |
-| `style`    | Formatting, missing semicolons, etc.  |
-| `refactor`| Code change that neither fixes a bug nor adds a feature |
-| `test`     | Adding or correcting tests           |
-| `chore`    | Build process, tooling, dependencies  |
+| Type | Usage |
+| ---- | ----- |
+| `feat` | A new feature or improvement |
+| `fix` | A bug fix |
+| `docs` | Documentation-only changes |
+| `style` | Formatting or cosmetic adjustments |
+| `refactor` | Structural improvements without feature changes |
+| `test` | Test or validation improvements |
+| `chore` | Build, tooling, or maintenance work |
 
 ### 5. Push and Open a Pull Request
 
 ```bash
-git push origin feature/your-feature-name
+git push origin docs/my-improvement
 ```
 
-Then open a Pull Request on GitHub targeting the `main` branch.
+Then open a pull request against `main`.
 
 ---
 
 ## Project Structure
 
-```
-open-projects-hub-docs/
+```text
+template-docs/
 ├── docs/
-│   ├── 01-requirements/      # Feature-based functional requirements
-│   ├── 02-planning/          # Phased roadmap and role mapping
-│   ├── 03-architecture/      # Architecture design, ADRs, API, security, ops
-│   ├── 04-database/          # Database schema and design
-│   ├── 05-prototype/         # UI prototypes and design direction
-│   └── 06-work-items/       # Epics and user stories
+│   ├── intro.md
+│   ├── 00-context/
+│   ├── 01-requirements/
+│   ├── 02-planning/
+│   ├── 03-architecture/
+│   ├── 04-decisions/
+│   ├── 05-prototype/
+│   └── ...
+├── examples/
+│   └── work-items/
+├── src/
+├── static/
 ├── README.md
-├── CONTRIBUTING.md           # You are here
-├── LICENSE                   # MIT License
-└── settings.yml
+├── CONTRIBUTING.md
+├── LICENSE
+├── docusaurus.config.ts
+├── sidebars.ts
+├── package.json
+├── tsconfig.json
+└── .github/
 ```
 
 ---
@@ -156,49 +155,35 @@ open-projects-hub-docs/
 
 ### General Principles
 
-- **Follow existing patterns** — Don't impose new patterns without discussion.
-- **Small, focused commits** — One logical change per commit.
-- **No dead code** — Remove unused imports, variables, and functions.
-- **Self-documenting code** — Use clear names; add comments only for non-obvious logic.
+- Follow existing patterns and conventions already in the repository.
+- Keep pull requests small and focused.
+- Remove stale or unused content when it no longer serves the template.
+- Prefer clear names and straightforward structure over unnecessary abstraction.
 
-### Backend (Python / FastAPI)
-
-- Follow Clean Architecture layer boundaries (domain, application, infrastructure, presentation).
-- Domain and application layers must remain framework-agnostic.
-- Use type hints throughout.
-- Follow PEP 8 with the project's configured linter/formatter.
-
-### Frontend (React / TypeScript)
-
-- Use TypeScript strict mode — no `any` unless absolutely necessary and documented.
-- Follow the established component structure (feature-based organization).
-- Use functional components with hooks.
-- Manage state with Redux Toolkit for shared state; local state with `useState`/`useReducer` for component-scoped data.
-
-### Documentation
+### Documentation Standards
 
 - Use clear, professional language.
-- Keep documents up to date when you change related code.
-- Follow the existing document header format (title, attribute table where applicable).
-- Link to related documents rather than duplicating content.
+- Keep examples and setup instructions accurate.
+- Link related documents instead of duplicating the same guidance.
+- Match the repository's existing Markdown and Docusaurus conventions.
+
+### Frontend / Config Standards
+
+- Keep TypeScript configuration and Docusaurus settings consistent with the rest of the project.
+- Prefer minimal, maintainable edits over broad rewrites.
+- Check that navigation, metadata, and links still work after changes.
 
 ---
 
-## Testing Guidelines
+## Testing and Verification
 
-This project follows a **Test-Driven Development (TDD)** approach with a minimum of **70% test coverage** for core logic.
+This repository is primarily a documentation site, so validation should focus on the working site and build health.
 
-| Layer     | Framework                          | Purpose                              |
-| --------- | ---------------------------------- | ------------------------------------ |
-| Backend   | Pytest                             | Unit and integration testing         |
-| Frontend  | Vitest + React Testing Library    | Unit and component testing           |
-| E2E       | Playwright                         | Critical user workflow validation    |
+Before submitting a pull request:
 
-**Before submitting a PR:**
-
-- Run all existing tests and ensure they pass.
-- Add tests for any new logic or changed behavior.
-- Do not skip, weaken, or remove tests to make builds pass — fix the underlying issue.
+- Run the project build locally with `npm run build`.
+- Check that links and docs render correctly.
+- Confirm changes do not break the configuration, navigation, or deployment workflow.
 
 ---
 
@@ -206,17 +191,16 @@ This project follows a **Test-Driven Development (TDD)** approach with a minimum
 
 ### Before Opening a PR
 
-- [ ] Your code follows the project's coding standards.
-- [ ] You've added tests for any new or changed logic.
-- [ ] All existing tests pass.
-- [ ] Your commit messages follow the Conventional Commits format.
-- [ ] You've updated relevant documentation if applicable.
+- [ ] The change is scoped to the requested improvement.
+- [ ] Documentation and examples were updated where needed.
+- [ ] The site builds successfully locally.
+- [ ] Commit messages follow the Conventional Commits format.
 
 ### PR Review
 
-1. A maintainer will review your PR.
-2. Address any feedback by pushing additional commits to the same branch (do not close and reopen the PR).
-3. Once approved, a maintainer will merge your PR.
+1. A maintainer or reviewer will review the PR.
+2. Address any requested updates in the same branch.
+3. Once approved, the change can be merged into `main`.
 
 ### PR Template
 
@@ -224,22 +208,22 @@ When opening a PR, include:
 
 ```markdown
 ## Description
-Brief description of what this PR does and why.
+Brief summary of the change and the reason for it.
 
 ## Related Issue
 Fixes # (issue number) / Refs # (issue number)
 
 ## Type of Change
 - [ ] Bug fix
-- [ ] New feature
 - [ ] Documentation update
+- [ ] Template improvement
 - [ ] Refactor
-- [ ] Test improvement
+- [ ] Build or workflow update
 
 ## Checklist
-- [ ] Code follows project standards
-- [ ] Tests added/updated and passing
-- [ ] Documentation updated if needed
+- [ ] Change is scoped and focused
+- [ ] Site builds successfully
+- [ ] Docs/examples updated as needed
 - [ ] Commit messages follow conventional commits
 ```
 
@@ -247,24 +231,24 @@ Fixes # (issue number) / Refs # (issue number)
 
 ## Reporting Issues
 
-When reporting a bug, please include:
+When reporting a problem, please include:
 
-1. **Summary** — A clear description of the problem.
-2. **Steps to reproduce** — Numbered list of actions that trigger the issue.
-3. **Expected behavior** — What you expected to happen.
-4. **Actual behavior** — What actually happened.
-5. **Environment** — OS, browser, Node/Python version, etc.
-6. **Screenshots/logs** — If applicable.
+1. **Summary** — A concise description of the issue.
+2. **Steps to reproduce** — What actions trigger it.
+3. **Expected behavior** — What should happen.
+4. **Actual behavior** — What happens instead.
+5. **Environment** — OS, browser, Node.js/npm version, and repository state.
+6. **Screenshots or logs** — If relevant.
 
 ---
 
 ## Questions & Discussions
 
-- **Issues** — For bugs, feature requests, and task tracking.
-- **Discussions** — For questions, ideas, and open-ended conversations (if enabled on the repository).
+- **Issues** — For bugs, documentation problems, and template improvements.
+- **Discussions** — For ideas, configuration questions, and broader feedback.
 
-Don't hesitate to ask — we're happy to help!
+If you are unsure where something belongs, open an issue or start a discussion. We appreciate the help.
 
 ---
 
-Thank you for contributing to the Open Projects Hub! 🚀
+Thank you for helping improve the template-docs project\! 🚀
