@@ -12,7 +12,7 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 
 | Folder | Contents |
 | ------ | -------- |
-| [00-context](./00-context/README.md) | Project overview, user personas, glossary, open questions, and out-of-scope items |
+| [00-context](./00-context/README.md) | Project overview, user personas, glossary, and out-of-scope items |
 | [01-requirements](./01-requirements/README.md) | Feature requirements organized by feature slice |
 | [02-planning](./02-planning/README.md) | Phased roadmap and role mapping |
 | [03-architecture](./03-architecture/README.md) | Core architecture, API, database, diagrams, ops, and security |

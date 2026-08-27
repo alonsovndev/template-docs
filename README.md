@@ -39,8 +39,7 @@ docs/
 ├── 02-planning/             # Phased roadmap and role mapping
 ├── 03-architecture/         # Core, API, database, diagrams, ops, security
 ├── 04-decisions/            # ADR decision log + ADR template
-├── 05-prototype/            # Prototype brief, design direction, Pencil files
-└── 06-work-items/           # Epic and story field patterns (Jira setup guide)
+└── 05-prototype/            # Prototype brief, design direction, Pencil files
 ```
 
 Work items (epics, user stories) live in **Jira** for production projects. The

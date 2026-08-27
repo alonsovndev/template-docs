@@ -69,7 +69,6 @@
 ## Source References
 
 - [Project Overview](./overview.md)
-- [Open Questions](./open-questions.md)
 
 ---
 

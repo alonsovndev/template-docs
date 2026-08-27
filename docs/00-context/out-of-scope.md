@@ -11,7 +11,7 @@
 
 This document explicitly lists features, capabilities, and enhancements that are **intentionally excluded** from the MVP scope. These may be considered for future releases.
 
-> For each excluded item, record the rationale and a traceability reference (question ID, feature ID, or `—`). If a stakeholder later asks "why isn't X in the MVP?", the answer should be findable here.
+> For each excluded item, record the rationale and a traceability reference (feature ID or `—`). If a stakeholder later asks "why isn't X in the MVP?", the answer should be findable here.
 
 ---
 
@@ -21,7 +21,7 @@ This document explicitly lists features, capabilities, and enhancements that are
 
 | Item                                               | Rationale                                                            | Traceability |
 | -------------------------------------------------- | -------------------------------------------------------------------- | ------------ |
-| [Deferred capability]                              | [Why it is excluded: complexity vs. value, dependency, timing.]      | [Q-xxx / F-xxx / —] |
+| [Deferred capability]                              | [Why it is excluded: complexity vs. value, dependency, timing.]      | [F-xxx / —] |
 | [Deferred capability]                              | [Why it is excluded.]                                                | [—]          |
 
 ### [Category 2, e.g. Integrations & Export]

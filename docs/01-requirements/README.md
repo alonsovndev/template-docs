@@ -83,13 +83,12 @@ Implementation team has confirmed:
 - [ ] Quality baselines are achievable with specified infrastructure
 - [ ] Infrastructure choices are appropriate for requirements
 - [ ] Scope boundaries ([out-of-scope.md](../00-context/out-of-scope.md)) are agreed upon
-- [ ] No critical open questions remain
+- [ ] No unresolved `## Open Questions` notes remain in this feature's file
 
 ## Source References
 
 - [Project Overview](../00-context/overview.md)
 - [User Personas](../00-context/user-personas.md)
-- [Open Questions](../00-context/open-questions.md)
 - [Out of Scope Items](../00-context/out-of-scope.md)
 
 ---
