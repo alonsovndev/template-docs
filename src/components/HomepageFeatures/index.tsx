@@ -10,29 +10,30 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
+    title: "Structured Content",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your documentation website up and running quickly.
+        Organize your documentation with sidebars, versioning, and
+        a clear hierarchy — so readers find what they need fast.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: "Write, Ship, Repeat",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and it does the chores. Go
-        ahead and move your content into the <code>docs</code> directory.
+        Write in Markdown, preview locally, and deploy with a single
+        command. Focus on your content while the toolchain handles the rest.
       </>
     ),
   },
   {
-    title: "Powered by React",
+    title: "Fully Customizable",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus
-        can be extended while reusing the same header and footer.
+        Extend layouts, themes, and components to match your brand.
+        Built on React so you can customize anything when the defaults
+        aren't enough.
       </>
     ),
   },

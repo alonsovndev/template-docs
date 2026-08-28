@@ -6,8 +6,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Template Docs",
-  tagline: "A documentation template built with Docusaurus.",
-  favicon: "img/favicon.ico",
+  tagline: "A documentation template for your projects.",
+  favicon: "img/favicon.svg",
 
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -15,14 +15,14 @@ const config: Config = {
 
   // Set the production url of your site here.
   // For GitHub Pages, it is usually 'https://<organizationName>.github.io'.
-  url: "https://your-org.github.io",
+  url: "https://alonsovndev.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served.
   // For GitHub Pages deployment, it is often '/<projectName>/'.
   baseUrl: "/",
 
   // GitHub Pages deployment config.
   // Replace with your GitHub org/user name and repository name.
-  organizationName: "your-org",
+  organizationName: "alonsovndev",
   projectName: "template-docs",
 
   onBrokenLinks: "throw",
@@ -43,7 +43,7 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           // Point this to your repository to enable the "Edit this page" links.
-          editUrl: "https://github.com/your-org/template-docs/edit/main/",
+          editUrl: "https://github.com/alonsovndev/template-docs/edit/main/",
         },
         blog: false,
         theme: {
@@ -71,7 +71,7 @@ const config: Config = {
           label: "Documentation",
         },
         {
-          href: "https://github.com/your-org/template-docs",
+          href: "https://github.com/alonsovndev/template-docs",
           label: "GitHub",
           position: "right",
         },
@@ -89,7 +89,7 @@ const config: Config = {
             },
             {
               label: "Getting Started",
-              to: "/docs/category/getting-started",
+              to: "/docs/intro",
             },
           ],
         },
@@ -98,12 +98,12 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/your-org/template-docs",
+              href: "https://github.com/alonsovndev/template-docs",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Your Organization. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Alonsovndev. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
