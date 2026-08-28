@@ -31,6 +31,15 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 6. **Prototype key flows in `05-prototype/`** — place your `.pen` file in `pen/` and document it with the brief and design direction.
 7. **Set up work items in your tracker** — configure Jira (or your tracker of choice) using the epic and story field patterns documented in your team's tracker setup.
 
+> **Using an AI coding agent?** Steps 1–7 above each have a matching guided slash command
+> (`/docs-context`, `/docs-requirements`, `/docs-planning`, `/docs-decisions`,
+> `/docs-architecture`, `/docs-prototype`, `/docs-work-items`) available for Claude Code,
+> opencode, and GitHub Copilot that interviews you and writes the answers into these docs
+> for you. Run `/docs-next` anytime to check section-by-section completion and get the
+> next recommended command. See the
+> [README's command table](https://github.com/your-org/template-docs#-generating-docs-with-ai-agents)
+> for where each agent's commands live.
+
 ## Template Setup Checklist
 
 - [ ] Replace `[Project Name]` in every file (use search-and-replace across `docs/`).
