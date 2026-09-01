@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # User Personas
 
 **Purpose:** Define core user personas aligned to the [Project Name] overview to ensure requirements and workflows serve the target audiences.

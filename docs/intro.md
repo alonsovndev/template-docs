@@ -23,6 +23,7 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 
 ## How to Use This Template
 
+0. **Run the template setup** — replace `[Project Name]` and update `docusaurus.config.ts`/`README.md` before writing any content (see the checklist below, or run `/docs-setup`).
 1. **Start with `00-context/`** — fill in the project overview, personas, and glossary before writing requirements.
 2. **Write requirements in `01-requirements/`** — use `f-000-feature-template.md` as the starting point for each new feature.
 3. **Plan phases in `02-planning/`** — map features to phases, define roles, and track risks.
@@ -31,8 +32,8 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 6. **Prototype key flows in `05-prototype/`** — place your `.pen` file in `pen/` and document it with the brief and design direction.
 7. **Set up work items in your tracker** — configure Jira (or your tracker of choice) using the epic and story field patterns documented in your team's tracker setup.
 
-> **Using an AI coding agent?** Steps 1–7 above each have a matching guided slash command
-> (`/docs-context`, `/docs-requirements`, `/docs-planning`, `/docs-decisions`,
+> **Using an AI coding agent?** Steps 0–7 above each have a matching guided slash command
+> (`/docs-setup`, `/docs-context`, `/docs-requirements`, `/docs-planning`, `/docs-decisions`,
 > `/docs-architecture`, `/docs-prototype`, `/docs-work-items`) available for Claude Code,
 > opencode, and GitHub Copilot that interviews you and writes the answers into these docs
 > for you. Run `/docs-next` anytime to check section-by-section completion and get the
@@ -41,6 +42,8 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 > for where each agent's commands live.
 
 ## Template Setup Checklist
+
+> Run `/docs-setup` to handle the first two items below for you.
 
 - [ ] Replace `[Project Name]` in every file (use search-and-replace across `docs/`).
 - [ ] Update `docusaurus.config.ts` with your project name, URL, and org.

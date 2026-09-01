@@ -63,6 +63,7 @@ directly into `docs/`, instead of manual search-and-replace.
 
 | Command              | Purpose                                                                                         |
 | -------------------- | ----------------------------------------------------------------------------------------------- |
+| `/docs-setup`        | One-time template setup — replaces `[Project Name]`, updates `docusaurus.config.ts` and `README.md` |
 | `/docs-next`         | Read-only status check — reports completion per section and tells you which command to run next |
 | `/docs-context`      | Fills `00-context` (overview, personas, glossary, out-of-scope)                                 |
 | `/docs-requirements` | Creates one feature doc per feature in `01-requirements`                                        |
@@ -72,7 +73,8 @@ directly into `docs/`, instead of manual search-and-replace.
 | `/docs-prototype`    | Fills `05-prototype` (prototype brief, design direction)                                        |
 | `/docs-work-items`   | Generates Jira-ready epics/stories into `work-items/` from the completed docs                   |
 
-Run them in order, since each section depends on the ones before it:
+Run `/docs-setup` first, then run the rest in order, since each section depends on the
+ones before it:
 `/docs-context` → `/docs-requirements` → `/docs-planning` → `/docs-decisions` →
 `/docs-architecture` → `/docs-prototype` → `/docs-work-items`. Run `/docs-next` at any
 point to check progress and get the next recommended command.
