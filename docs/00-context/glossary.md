@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Glossary
 
 This document defines key terms used throughout the requirements and architecture documentation. Keep it current: whenever a new domain term appears in any document, add it here first.

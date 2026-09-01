@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Out of Scope for MVP
 
 | Attribute   | Value             |
