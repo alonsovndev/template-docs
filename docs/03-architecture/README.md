@@ -31,12 +31,12 @@ Files in `database/`:
 - **[Database Domain Overview](./database/README.md)**: Database architecture domain with schema design guidance and best-practice checklists.
 - **[Database Design](./database/database-design.md)**: Entities, relationships, ERD, constraints, and access patterns.
 
-## 4. API and Communication
+## 4. Interfaces and Data Contracts
 
-Files in `api/`:
+Files in `contracts/`:
 
-- **[API Design Standards](./api/api-design-standards.md)**: REST conventions, versioning, error handling, and naming rules.
-- **[API Contract](./api/api-contract.md)**: Endpoint catalog and shared JSON schemas.
+- **[Contract Design Standards](./contracts/contract-design-standards.md)**: Naming, versioning, error handling, and format conventions for the project's contract type(s) — REST, CLI, gRPC, events, or a library/SDK.
+- **[Contract Catalog](./contracts/contract-catalog.md)**: Catalog of interfaces/operations and shared schemas.
 
 ## 5. Security
 
@@ -66,12 +66,12 @@ Decisions live outside this folder — architecture documents link to them inste
 
 This matrix confirms every Must-priority requirement is addressed by at least one architecture domain. Update whenever ADRs or requirements change.
 
-| Architecture Domain       | Must FR(s) Covered | Must NFR(s) Covered | Key ADR(s) |
-| ------------------------- | ------------------ | ------------------- | ---------- |
-| Core Architecture         | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
-| Database                  | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
-| API and Communication     | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
-| Security                  | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
-| Deployment and Operations | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
+| Architecture Domain           | Must FR(s) Covered | Must NFR(s) Covered | Key ADR(s) |
+| ----------------------------- | ------------------ | ------------------- | ---------- |
+| Core Architecture             | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
+| Database                      | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
+| Interfaces and Data Contracts | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
+| Security                      | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
+| Deployment and Operations     | [FR-xxx]           | [NFR-Xnn]           | [ADR-xxx]  |
 
 > **Rule:** Any Must FR or NFR with no domain coverage is an architecture gap — create an ADR before phase sign-off.

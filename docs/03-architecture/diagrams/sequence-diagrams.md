@@ -56,7 +56,7 @@ sequenceDiagram
 ## Source References
 
 - [Feature Requirements](../../01-requirements/README.md)
-- [API Contract](../api/api-contract.md)
+- [Contract Catalog](../contracts/contract-catalog.md)
 - [Architecture Solution Design](../core/architecture-solution-design.md)
 
 ---

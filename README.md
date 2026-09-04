@@ -38,9 +38,9 @@ docs/
 ├── 00-context/              # Project overview, personas, glossary, open questions, out of scope
 ├── 01-requirements/         # Feature map + per-feature requirement template
 ├── 02-planning/             # Phased roadmap and role mapping
-├── 03-architecture/         # Core, API, database, diagrams, ops, security
+├── 03-architecture/         # Core, interface/data contracts, database, diagrams, ops, security
 ├── 04-decisions/            # ADR decision log + ADR template
-└── 05-prototype/            # Prototype brief, design direction, Pencil files
+└── 05-prototype/            # Prototype brief, design direction, prototype artifacts
 ```
 
 Work items (epics, user stories) live in **Jira** for production projects. The
@@ -69,7 +69,7 @@ directly into `docs/`, instead of manual search-and-replace.
 | `/docs-requirements` | Creates one feature doc per feature in `01-requirements`                                                                              |
 | `/docs-planning`     | Fills `02-planning` (phased roadmap, role mapping)                                                                                    |
 | `/docs-decisions`    | Creates one ADR per decision in `04-decisions`                                                                                        |
-| `/docs-architecture` | Fills `03-architecture` one subfolder per run (core → database → api → security → ops → diagrams), drafting ADRs as decisions come up |
+| `/docs-architecture` | Fills `03-architecture` one subfolder per run (core → database → contracts → security → ops → diagrams), drafting ADRs as decisions come up |
 | `/docs-prototype`    | Fills `05-prototype` (prototype brief, design direction)                                                                              |
 | `/docs-work-items`   | Generates Jira-ready epics/stories into `work-items/` from the completed docs                                                         |
 

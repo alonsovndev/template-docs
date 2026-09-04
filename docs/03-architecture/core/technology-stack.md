@@ -35,7 +35,7 @@ Component-level technology choices with rationale. Every significant choice here
 
 ### Frontend ↔ Backend
 
-[Protocol, contract conventions (see [API Design Standards](../api/api-design-standards.md)), error handling expectations.]
+[Protocol, contract conventions (see [Contract Design Standards](../contracts/contract-design-standards.md)), error handling expectations.]
 
 ### Backend ↔ Database
 

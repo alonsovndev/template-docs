@@ -1,6 +1,6 @@
 ---
 mode: agent
-description: Guided fill-in of docs/03-architecture — one subfolder per run (core → database → api → security → ops → diagrams), ≤10 questions per pass, drafting ADRs into 04-decisions as decisions come up.
+description: Guided fill-in of docs/03-architecture — one subfolder per run (core → database → contracts → security → ops → diagrams), ≤10 questions per pass, drafting ADRs into 04-decisions as decisions come up.
 ---
 
 # /docs-architecture
@@ -12,7 +12,7 @@ Guide the user through populating `docs/03-architecture/`. Prerequisite:
 This section is large (6 subfolders), so run **one subfolder per invocation** — do
 not attempt the whole section in one go.
 
-Authoring pass order: **core → database → api → security → ops → diagrams**.
+Authoring pass order: **core → database → contracts → security → ops → diagrams**.
 Diagrams come last because they synthesize the other passes; this differs from the
 reader-facing order in `docs/03-architecture/README.md`, where diagrams sit second
 — that difference is intentional.
@@ -28,7 +28,7 @@ For this pass:
 1. **Read** the subfolder's `README.md` and content file(s)
    (`core/architecture-solution-design.md`, `core/architecture-styles.md`,
    `core/technology-stack.md`; `database/database-design.md`;
-   `api/api-design-standards.md`, `api/api-contract.md`;
+   `contracts/contract-design-standards.md`, `contracts/contract-catalog.md`;
    `security/security-architecture.md`, `security/threat-model.md`;
    `ops/deployment-architecture.md`, `ops/ci-cd-pipeline.md`,
    `ops/monitoring-observability.md`; `diagrams/sequence-diagrams.md`).
@@ -48,10 +48,13 @@ For this pass:
 4. **Ask, capped at 10 for this pass.** Use as few as the subfolder needs — often
    5 or fewer covers a subfolder; go up to 10 only when it genuinely has that many
    independent open items. Ask directly in chat, batching questions into a short
-   numbered list. If an earlier pass — including an earlier invocation of this
-   command — already answered something relevant (e.g. tech stack chosen in `core`
-   also answers a `database` question), read it back from the written docs and
-   ADRs instead of asking again.
+   numbered list. In the `contracts` pass, always include a Contract Type
+   question early — REST API, CLI, gRPC, Event/Message, Library/SDK, or a
+   combination — since it shapes every other answer in that pass. If an earlier
+   pass — including an earlier invocation of this command — already answered
+   something relevant (e.g. tech stack chosen in `core` also answers a
+   `database` question), read it back from the written docs and ADRs instead of
+   asking again.
 
 5. **Capture decisions as ADRs in this same pass.** Treat an answer as ADR-worthy
    when it matches an item in the "Recommended Decision Areas" checklist in

@@ -24,7 +24,7 @@ Read-only. Do not edit any files.
    each depends on the ones before it (per the "Source References" sections in
    each README and the explicit step list in `docs/intro.md`). If that section is
    `03-architecture`, name the subfolder too: `/docs-architecture` runs one
-   subfolder per invocation in the authoring order core → database → api →
+   subfolder per invocation in the authoring order core → database → contracts →
    security → ops → diagrams, so recommend it for the earliest incomplete
    subfolder in that order (e.g. `/docs-architecture security`).
 

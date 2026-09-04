@@ -206,7 +206,7 @@ flowchart LR
 
 ## Source References
 
-- [API Design Standards](../api/api-design-standards.md)
+- [Contract Design Standards](../contracts/contract-design-standards.md)
 - [Deployment Architecture](../ops/deployment-architecture.md)
 - [Feature Requirements](../../01-requirements/README.md)
 
