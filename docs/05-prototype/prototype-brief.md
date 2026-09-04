@@ -1,10 +1,11 @@
 # Prototype Brief
 
-| Attribute   | Value          |
-| ----------- | -------------- |
-| **Project** | [Project Name] |
-| **Version** | 0.1            |
-| **Status**  | Draft          |
+| Attribute            | Value                                                         |
+| -------------------- | ------------------------------------------------------------- |
+| **Project**          | [Project Name]                                                |
+| **Version**          | 0.1                                                           |
+| **Status**           | Draft                                                         |
+| **Prototyping Tool** | [Stitch / pen.dev (Pencil) / ASCII mockups / draw.io / Other] |
 
 ## Table of Contents
 
@@ -27,7 +28,7 @@
 
 ## Purpose
 
-[State the prototype's purpose: validate core user experience before engineering investment. Link to the design tool (Pencil `.pen` file).]
+[State the prototype's purpose: validate core user experience before engineering investment. Link to the design tool artifact (e.g., Pencil `.pen` file, draw.io diagram, Stitch project URL, or the ASCII mockups below).]
 
 ## Product Context
 

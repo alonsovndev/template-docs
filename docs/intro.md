@@ -17,7 +17,7 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 | [02-planning](./02-planning/README.md) | Phased roadmap and role mapping |
 | [03-architecture](./03-architecture/README.md) | Core architecture, API, database, diagrams, ops, and security |
 | [04-decisions](./04-decisions/README.md) | Architectural Decision Records (ADRs) and decision log |
-| [05-prototype](./05-prototype/README.md) | Prototype brief, design direction, and Pencil files |
+| [05-prototype](./05-prototype/README.md) | Prototype brief, design direction, and prototype artifacts |
 
 > Update the links above once you rename the category folders for your project.
 
@@ -29,7 +29,7 @@ This site is built with [Docusaurus](https://docusaurus.io/) and contains all pr
 3. **Plan phases in `02-planning/`** — map features to phases, define roles, and track risks.
 4. **Record decisions in `04-decisions/`** — use the [ADR Template](./04-decisions/adr-template.md) for every significant architectural choice.
 5. **Design the architecture in `03-architecture/`** — fill in the solution design, API standards, database schema, and security posture.
-6. **Prototype key flows in `05-prototype/`** — place your `.pen` file in `pen/` and document it with the brief and design direction.
+6. **Prototype key flows in `05-prototype/`** — place your prototype artifact (Pencil `.pen`, draw.io, Stitch link, or ASCII mockup) and document it with the brief and design direction.
 7. **Set up work items in your tracker** — configure Jira (or your tracker of choice) using the epic and story field patterns documented in your team's tracker setup.
 
 > **Using an AI coding agent?** Steps 0–7 above each have a matching guided slash command

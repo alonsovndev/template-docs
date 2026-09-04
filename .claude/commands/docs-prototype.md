@@ -26,13 +26,19 @@ Follow this procedure:
    style, platform/device target).
 
 4. **Ask, capped at 10.** Use as few as the section needs — often 5 or fewer is
-   plenty. Use `AskUserQuestion`, split across multiple calls of ≤4.
+   plenty. Ask the user interactively (e.g., using `ask_question` in Antigravity,
+   `AskUserQuestion` in Claude Code, or standard conversational prompts in Copilot/OpenCode).
+   Always include a tool-selection question: which tool the engineer plans to use to
+   create the prototype — **Stitch** (hosted, no local file), **pen.dev / Pencil**
+   (`.pen` file in `pen/`), **simple mockups** (ASCII, inline in the brief), **draw.io**
+   (`.drawio` file in `drawio/`), or **other**.
 
 5. **Write.** Use `technical-writer` and `markdown-author` skills. Edit
    `prototype-brief.md` and `design-direction.md` directly with the answers,
-   update status/date fields. Leave uncovered sections as placeholders. Do not
-   create or edit any `.pen` file — that's a separate, manual design step outside
-   this command's scope.
+   update status/date fields, and record the selected tool in the **Prototyping Tool**
+   row of `prototype-brief.md`'s attribute table. Leave uncovered sections as
+   placeholders. Do not create or edit the actual prototype files (e.g., `.pen`,
+   `.drawio`) — creating the prototype is a separate step outside this command's scope.
 
 6. **Summarize.** List what was written and what's still open. Note that the
    remaining step in `docs/intro.md` (work items in Jira) is external to this repo
