@@ -12,8 +12,7 @@ sidebar_position: 2
 
 ## Table of Contents
 
-- [CI/CD Pipeline Architecture](#cicd-pipeline-architecture)
-  - [Table of Contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
   - [1. Branching Strategy](#1-branching-strategy)
     - [Branch Protection Rules](#branch-protection-rules)
   - [2. Fork Setup \& Sync](#2-fork-setup--sync)
