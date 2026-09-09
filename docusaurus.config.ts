@@ -18,7 +18,7 @@ const config: Config = {
   url: "https://alonsovndev.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served.
   // For GitHub Pages deployment, it is often '/<projectName>/'.
-  baseUrl: "/",
+  baseUrl: "/template-docs/",
 
   // GitHub Pages deployment config.
   // Replace with your GitHub org/user name and repository name.
