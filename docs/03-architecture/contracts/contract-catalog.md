@@ -14,7 +14,6 @@ sidebar_position: 2
 ## Table of Contents
 
 - [Contract Scope and Conventions](#contract-scope-and-conventions)
-- [Contract Catalog](#contract-catalog)
 - [Shared Schemas](#shared-schemas)
 - [Detailed Contract Specifications](#detailed-contract-specifications)
 - [Standard Error/Failure Examples](#standard-errorfailure-examples)
