@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Deployment Architecture
 
 | Attribute        | Value                       |

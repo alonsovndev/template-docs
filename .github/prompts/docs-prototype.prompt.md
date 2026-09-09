@@ -39,4 +39,9 @@ Follow this procedure:
 6. **Summarize.** List what was written and what's still open. Note that the
    remaining step in `docs/intro.md` (work items in Jira) is external to this repo
    and not covered by these commands — point to `examples/work-items/` as a
-   reference for that format if useful.
+   reference for that format if useful. Once the prototype file itself produces
+   real screens, mention as an optional follow-up (outside this command's scope,
+   tool-specific): export a few representative screens into
+   `docs/05-prototype/images/` and add them to the `## Screens Preview` table in
+   `README.md`, so the prototype can be browsed without opening the prototyping
+   tool.

@@ -36,6 +36,12 @@ const config: Config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ["@docusaurus/theme-mermaid"],
+
   presets: [
     [
       "classic",
@@ -56,6 +62,11 @@ const config: Config = {
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
+    },
+    // Diagrams must stay legible in both color modes, since colorMode follows
+    // the reader's OS preference.
+    mermaid: {
+      theme: { light: "neutral", dark: "dark" },
     },
     navbar: {
       title: "Template Docs",

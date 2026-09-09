@@ -20,7 +20,11 @@ Follow this procedure:
 
 3. **Establish scope.** Cross-check the README's "Recommended Decision Areas"
    checklist against existing `adr-0XX-*.md` files to see which areas are still
-   unaddressed. Ask the user (as one of your questions) which decision(s) to
+   unaddressed. `/docs-architecture` also writes ADRs inline during its subfolder
+   passes, so read the existing ADRs before assuming an area is open. Use this
+   command for decisions that are not tied to an architecture pass, and for
+   revisiting an existing ADR's status (Proposed → Accepted, superseded,
+   deprecated). Ask the user (as one of your questions) which decision(s) to
    record in this pass — prefer decisions already implied by answers given in
    `/docs-requirements` or `/docs-planning` (e.g. an infrastructure choice that was
    deferred out of a feature doc) before asking about new ones.
@@ -39,8 +43,10 @@ Follow this procedure:
    from the highest existing ADR). Use `technical-writer` and `markdown-author`
    skills to fill in the sections covered by the answers, set status to `Proposed`
    or `Accepted`, and set the date fields. Leave uncovered sections as
-   placeholders.
+   placeholders. Then add the row to the Decision Log table in
+   `docs/04-decisions/README.md` and tick the matching "Recommended Decision
+   Areas" item.
 
 7. **Summarize.** List the ADRs created/updated and what's still open. Tell the
-   user to run `/docs-architecture` next (architecture docs should link back to
-   these ADRs).
+   user to run `/docs-architecture` next — it links back to these ADRs and will
+   add further ADRs inline as each subfolder pass raises a decision.
