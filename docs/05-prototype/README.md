@@ -14,6 +14,7 @@ that choice.
 | `design-direction.md` | Visual direction, color strategy, typography, component inventory, accessibility, responsive breakpoints |
 | `pen/`                | Only if pen.dev/Pencil is selected — place your `.pen` design file here (not committed if >50 MB)        |
 | `drawio/`             | Only if draw.io is selected — place your `.drawio` mockup file here                                      |
+| `images/`             | Optional — static screenshots/exports of the prototype's screens, embedded in the Screens Preview section below |
 
 Stitch prototypes are hosted — link the project URL from `prototype-brief.md` instead of
 storing a local file. ASCII mockups live inline, directly in `prototype-brief.md`.
@@ -33,6 +34,17 @@ storing a local file. ASCII mockups live inline, directly in `prototype-brief.md
 - **Simple mockups (ASCII)** — read them directly in `prototype-brief.md`; no external
   tool required.
 
+## Screens Preview
+
+Once the prototype has real screens, export a handful of the most representative
+ones as static images (PNG/JPEG) into `images/`, then embed them here so readers can
+see the app without opening the prototyping tool. Keep it to key screens, not every
+state — link to the full prototype file for the rest.
+
+| Screen        | Preview                              |
+| ------------- | ------------------------------------- |
+| [Screen Name] | `![Screen Name](./images/screen.png)` |
+
 ## Scope
 
 Define what the prototype covers (e.g. Discovery and Planning workflows only) and what is out of scope (e.g. delivery, sprint, maintenance). This prevents scope creep during the design phase.
@@ -44,3 +56,7 @@ Define what the prototype covers (e.g. Discovery and Planning workflows only) an
 - [Project Overview](../00-context/overview.md)
 - [Requirements by Feature](../01-requirements/README.md)
 - [Architecture](../03-architecture/README.md)
+
+---
+
+**Last Updated**: YYYY-MM-DD
