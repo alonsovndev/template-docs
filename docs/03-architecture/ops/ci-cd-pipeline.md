@@ -4,35 +4,45 @@ sidebar_position: 2
 
 # CI/CD Pipeline Architecture
 
-| Attribute        | Value                       |
-| ---------------- | --------------------------- |
-| **Project**      | [Project Name]              |
-| **Version**      | 0.1                         |
-| **Status**       | Draft                       |
+| Attribute   | Value          |
+| ----------- | -------------- |
+| **Project** | [Project Name] |
+| **Version** | 0.1            |
+| **Status**  | Draft          |
 
 ## Table of Contents
 
-- [1. Branching Strategy](#1-branching-strategy)
-- [2. Fork Setup & Sync](#2-fork-setup--sync)
-- [3. Branch Naming Conventions](#3-branch-naming-conventions)
-- [4. PR Conventions](#4-pr-conventions)
-- [5. CI/CD Tool Selection](#5-cicd-tool-selection)
-- [6. Pipeline Stages](#6-pipeline-stages)
-- [7. Build and Verification Responsibilities](#7-build-and-verification-responsibilities)
-- [8. Hotfix Process](#8-hotfix-process)
-- [9. Deployment Environment Strategy](#9-deployment-environment-strategy)
-- [10. Database Migration Strategy](#10-database-migration-strategy)
-- [11. Rollback Strategy](#11-rollback-strategy)
-- [12. Environment Variables and Secrets Management](#12-environment-variables-and-secrets-management)
-- [13. Zero-Downtime Deployment Approach](#13-zero-downtime-deployment-approach)
-- [14. Deployment Impact Summary](#14-deployment-impact-summary)
-- [Source References](#source-references)
+- [CI/CD Pipeline Architecture](#cicd-pipeline-architecture)
+  - [Table of Contents](#table-of-contents)
+  - [1. Branching Strategy](#1-branching-strategy)
+    - [Branch Protection Rules](#branch-protection-rules)
+  - [2. Fork Setup \& Sync](#2-fork-setup--sync)
+    - [One-time Fork Setup](#one-time-fork-setup)
+    - [Keeping Your Fork in Sync](#keeping-your-fork-in-sync)
+  - [3. Branch Naming Conventions](#3-branch-naming-conventions)
+  - [4. PR Conventions](#4-pr-conventions)
+    - [Feature PR Flow (target: `dev`)](#feature-pr-flow-target-dev)
+    - [Release PR Flow (dev → main)](#release-pr-flow-dev--main)
+    - [Releasing to Production](#releasing-to-production)
+    - [Release Versioning](#release-versioning)
+    - [Commit Conventions](#commit-conventions)
+  - [5. CI/CD Tool Selection](#5-cicd-tool-selection)
+  - [6. Pipeline Stages](#6-pipeline-stages)
+  - [7. Build and Verification Responsibilities](#7-build-and-verification-responsibilities)
+  - [8. Hotfix Process](#8-hotfix-process)
+  - [9. Deployment Environment Strategy](#9-deployment-environment-strategy)
+  - [10. Database Migration Strategy](#10-database-migration-strategy)
+  - [11. Rollback Strategy](#11-rollback-strategy)
+  - [12. Environment Variables and Secrets Management](#12-environment-variables-and-secrets-management)
+  - [13. Zero-Downtime Deployment Approach](#13-zero-downtime-deployment-approach)
+  - [14. Deployment Impact Summary](#14-deployment-impact-summary)
+  - [Source References](#source-references)
 
 ## 1. Branching Strategy
 
 The project uses a **two-branch model** (`dev` + `main`) with fork-based contributions. All contributors — core team and external — work from forks and submit pull requests to the upstream repository.
 
-```
+```text
 feature/<desc>  fix/<desc>  docs/<desc>    ← created from dev in your fork
          │
          ▼
@@ -59,16 +69,16 @@ No direct commits to `dev` or `main`. All changes arrive via pull request from a
 
 ### Branch Protection Rules
 
-| Rule                    | `dev`                                       | `main`                                                      |
-| ----------------------- | ------------------------------------------- | ----------------------------------------------------------- |
-| Direct pushes           | Blocked                                     | Blocked                                                     |
-| PR required             | All changes via PR                          | All changes via PR from `dev` or hotfix                     |
-| Required approvals      | 1 (when team > 1)                           | 2                                                           |
-| Status checks           | Must pass (lint, test, type-check, docs)    | Must pass (lint, test, type-check, docs, infra plan)        |
-| Up-to-date before merge | Required                                    | Required                                                    |
-| Conversation resolution | Required                                    | Required                                                    |
-| Stale reviews           | Dismissed on new commits                    | Dismissed on new commits                                    |
-| Force pushes            | Blocked                                     | Blocked                                                     |
+| Rule                    | `dev`                                    | `main`                                               |
+| ----------------------- | ---------------------------------------- | ---------------------------------------------------- |
+| Direct pushes           | Blocked                                  | Blocked                                              |
+| PR required             | All changes via PR                       | All changes via PR from `dev` or hotfix              |
+| Required approvals      | 1 (when team > 1)                        | 2                                                    |
+| Status checks           | Must pass (lint, test, type-check, docs) | Must pass (lint, test, type-check, docs, infra plan) |
+| Up-to-date before merge | Required                                 | Required                                             |
+| Conversation resolution | Required                                 | Required                                             |
+| Stale reviews           | Dismissed on new commits                 | Dismissed on new commits                             |
+| Force pushes            | Blocked                                  | Blocked                                              |
 
 ---
 
@@ -108,44 +118,19 @@ git rebase upstream/dev
 git push origin feature/<branch-name> --force-with-lease
 ```
 
-### Optional Git Aliases
-
-These user-level aliases simplify fork workflow. Add them to `~/.gitconfig`:
-
-```bash
-git config --global --edit
-```
-
-```ini
-[alias]
-   sync = !git fetch upstream && git merge upstream/$(git branch --show-current) && git push origin HEAD
-   resync = !git fetch upstream && git reset --hard upstream/$(git branch --show-current) && git push origin HEAD --force-with-lease
-   feat = "!f() { test -n \"$1\" || { echo \"usage: git feature <branch-name>\"; return 1; }; git checkout dev && git resync && git checkout -b \"$1\"; }; f"
-```
-
-| Alias             | What it does                                                                                                                                                                                                     |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git sync`        | Fetches `upstream`, merges `upstream/<current-branch>` into your current branch, then pushes the result to the same branch on your fork (`origin`). Use to bring a local branch up to date without rewriting it. |
-| `git resync`      | Fetches `upstream`, resets your current branch to exactly match `upstream/<current-branch>`, then force-pushes with `--force-with-lease`. Use to make your fork's `dev` or `main` match upstream exactly.        |
-| `git feat <name>` | Checks out `dev`, runs `git resync` so local and fork `dev` match `upstream/dev`, then creates the named feature branch from the refreshed `dev`.                                                               |
-
-**Important:** Use `git resync` only on disposable local copies of shared branches (`dev` or `main`). Do not run it on a feature branch that contains unmerged work.
-
----
-
 ## 3. Branch Naming Conventions
 
 All work branches are created from `dev` (except hotfixes, which branch from `main`):
 
-| Branch type   | Pattern                       | Example                      | Targets |
-| ------------- | ----------------------------- | ---------------------------- | ------- |
-| Feature       | `feature/<short-description>` | `feature/user-profile-page`  | `dev`   |
-| Bug fix       | `fix/<issue-description>`     | `fix/login-redirect-loop`    | `dev`   |
-| Documentation | `docs/<topic>`                | `docs/update-readme`         | `dev`   |
-| Refactoring   | `refactor/<component>`        | `refactor/auth-service`      | `dev`   |
-| Tests         | `test/<scope>`                | `test/auth-endpoints`        | `dev`   |
-| Chores        | `chore/<task>`                | `chore/update-dependencies`  | `dev`   |
-| Hotfix        | `hotfix/<description>`        | `hotfix/fix-login-regression`| `main`  |
+| Branch type   | Pattern                       | Example                       | Targets |
+| ------------- | ----------------------------- | ----------------------------- | ------- |
+| Feature       | `feature/<short-description>` | `feature/user-profile-page`   | `dev`   |
+| Bug fix       | `fix/<issue-description>`     | `fix/login-redirect-loop`     | `dev`   |
+| Documentation | `docs/<topic>`                | `docs/update-readme`          | `dev`   |
+| Refactoring   | `refactor/<component>`        | `refactor/auth-service`       | `dev`   |
+| Tests         | `test/<scope>`                | `test/auth-endpoints`         | `dev`   |
+| Chores        | `chore/<task>`                | `chore/update-dependencies`   | `dev`   |
+| Hotfix        | `hotfix/<description>`        | `hotfix/fix-login-regression` | `main`  |
 
 ---
 
@@ -153,16 +138,16 @@ All work branches are created from `dev` (except hotfixes, which branch from `ma
 
 All pull requests follow these conventions:
 
-| Field              | Rule                                                                            |
-| ------------------ | ------------------------------------------------------------------------------- |
-| Title              | Short description in imperative mood (e.g., `add pipeline audit endpoint`)      |
-| Target branch      | `dev` for features, fixes, docs, refactors, tests, chores; `main` for hotfixes  |
-| Merge strategy     | Standard merge commit — preserves full feature branch history                    |
-| Required approvals | 1 for PRs targeting `dev`; 2 for PRs targeting `main`                           |
-| Self-approval      | Not allowed                                                                     |
-| CI gate            | All status checks must pass (lint, test, type-check, docs)                      |
-| Unresolved threads | Must be resolved before merge                                                   |
-| Up-to-date         | Branch must be current with target before merge                                 |
+| Field              | Rule                                                                           |
+| ------------------ | ------------------------------------------------------------------------------ |
+| Title              | Short description in imperative mood (e.g., `add pipeline audit endpoint`)     |
+| Target branch      | `dev` for features, fixes, docs, refactors, tests, chores; `main` for hotfixes |
+| Merge strategy     | Standard merge commit — preserves full feature branch history                  |
+| Required approvals | 1 for PRs targeting `dev`; 2 for PRs targeting `main`                          |
+| Self-approval      | Not allowed                                                                    |
+| CI gate            | All status checks must pass (lint, test, type-check, docs)                     |
+| Unresolved threads | Must be resolved before merge                                                  |
+| Up-to-date         | Branch must be current with target before merge                                |
 
 ### Feature PR Flow (target: `dev`)
 
