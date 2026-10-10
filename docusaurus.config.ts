@@ -15,10 +15,12 @@ const config: Config = {
 
   // Set the production url of your site here.
   // For GitHub Pages, it is usually 'https://<organizationName>.github.io'.
-  url: "https://alonsovndev.github.io",
+  // DOCS_URL overrides it at build time, for example on Cloudflare or CloudFront.
+  url: process.env.DOCS_URL ?? "https://alonsovndev.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served.
   // For GitHub Pages deployment, it is often '/<projectName>/'.
-  baseUrl: "/template-docs/",
+  // DOCS_BASE_URL overrides it at build time; use "/" for a custom domain.
+  baseUrl: process.env.DOCS_BASE_URL ?? "/template-docs/",
 
   // GitHub Pages deployment config.
   // Replace with your GitHub org/user name and repository name.
